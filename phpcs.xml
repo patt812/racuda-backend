@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<ruleset name="TPF-Format">
+    <!-- Apply only to files with a php extension -->
+    <arg name="extensions" value="php" />
+
+    <!-- Option p: Show progress  s: Show rule on error -->
+    <arg value="ps" />
+
+    <!-- Exclude all rules -->
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/migrations/*</exclude-pattern>
+    <exclude-pattern>*/bootstrap/cache/*</exclude-pattern>
+    <exclude-pattern>*/public/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*.blade.php</exclude-pattern>
+    <exclude-pattern>*/lang/*</exclude-pattern>
+
+    <rule ref="PSR12" />
+
+    <!-- CamelCase for method names -->
+    <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+        <!-- Exclude rule -->
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+
+    <!-- Set line length -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <!-- Warning line -->
+            <!-- <property name="lineLimit" value="100"/> -->
+            <!-- Invalid line -->
+            <property name="absoluteLineLimit" value="110"/>
+        </properties>
+    </rule>
+
+    <!-- Set indent of array elements to 4 -->
+    <rule ref="Generic.Arrays.ArrayIndent" />
+
+    <!-- Set indent for method chains and properties to 4 -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+
+    <!-- Use short array syntax -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+
+    <!-- Detect assignment within control structures (excluding ternary operations) -->
+    <rule ref="Generic.CodeAnalysis.AssignmentInCondition" />
+
+    <!-- Detect control structures that are always true/false -->
+    <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement" />
+
+    <!-- Detect Yoda conditions -->
+    <rule ref="Generic.ControlStructures.DisallowYodaConditions" />
+
+    <!-- Do not use deprecated PHP functions -->
+    <rule ref="Generic.PHP.DeprecatedFunctions" />
+
+    <!-- Check if comments are formatted -->
+    <rule ref="Generic.Commenting.DocComment" />
+    <rule ref="Generic.Commenting.DocComment.NonParamGroup">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.Commenting.DocComment.ShortNotCapital">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.Commenting.DocComment.TagValueIndent">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.Commenting.DocComment.MissingShort">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow non-camel-cased member variables -->
+    <rule ref="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow private variables without an underscore -->
+    <rule ref="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Detect logical operators and/or -->
+    <rule ref="Squiz.Operators.ValidLogicalOperators" />
+
+    <!-- Set spacing between methods -->
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+            <property name="spacingBeforeFirst" value="0" />
+            <property name="spacingAfterLast" value="0" />
+        </properties>
+    </rule>
+
+    <!-- Detect whitespace before semicolon -->
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing" />
+
+    <!-- Allow variables inside "" -->
+    <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Array format -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration" />
+
+    <!-- Allow variables inside "" -->
+    <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
+        <severity>0</severity>
+    </rule>
+
+    <!-- General rules about array declaration -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration" />
+
+    <!-- Allow unaligned array keys -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.KeyNotAligned">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow single-line array declarations -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow the need for short array syntax -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.requireShortArraySyntax">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow multi-line array declarations -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow unaligned array values -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.ValueNotAligned">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow unaligned closing brace for arrays -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow closing brace for arrays on a new line -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNewLine">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow unaligned double arrows in arrays -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow spacing before closing parenthesis in function arguments -->
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeClose">
+        <severity>0</severity>
+    </rule>
+</ruleset>
