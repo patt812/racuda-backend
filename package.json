@@ -1,0 +1,22 @@
+{
+    "name": "raduca-backend",
+    "private": true,
+    "scripts": {
+        "setup:husky": "husky install && husky add .husky/pre-commit 'lint-staged'"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.php": [
+            "vendor/bin/php-cs-fixer --config=.php-cs-fixer.php fix --allow-risky=yes",
+            "vendor/bin/phpcs --standard=phpcs.xml --encoding=utf-8 -p -s -v -n ."
+        ]
+    },
+    "devDependencies": {
+        "husky": "^8.0.3",
+        "lint-staged": "^14.0.1"
+    }
+}
